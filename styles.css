@@ -1,0 +1,38 @@
+/* Place your CSS styles in this file */
+body {background-color: beige;}
+
+h1 {
+    text-align: center;
+    font-family: Times New Roman, Times, serif;
+    font-weight: bold;
+    color: blue;
+}
+
+UL {list-style-type:none;
+border: 2px solid black;
+padding: 7px;
+background-color:blanchedalmond;
+text-align: center;
+font-size: 30px;
+}
+
+li {display:inline;
+padding: 10px;
+}
+
+p {
+    color:darkblue;
+    font-size: 30px;
+}
+
+.p2 {
+    font-weight: bold;
+    color:crimson;
+}
+
+pre {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    font-style: italic;
+}
