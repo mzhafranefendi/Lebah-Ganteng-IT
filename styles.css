@@ -1,38 +1,64 @@
-/* Place your CSS styles in this file */
-body {background-color: beige;}
+/* Aturan Dasar & Background Tematik Beehive Terang */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333333;
+    /* Menggunakan background pattern sarang lebah (beehive) warna terang yang soft */
+    background-color: #faf8f2;
+    background-image: url("https://www.transparenttextures.com/patterns/honeycomb.png");
+    background-attachment: fixed;
+}
 
-h1 {
-    text-align: center;
-    font-family: Times New Roman, Times, serif;
+/* Mengubah List Menjadi Navigasi Keren (Navbar) */
+ul {
+    list-style-type: none;
+    margin: 20px 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi transparan putih agar kontras */
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: inline-flex;
+}
+
+/* Mempercantik Tampilan Hyperlink Menu */
+ul li a {
+    text-decoration: none;
+    color: #5c4308; /* Warna cokelat madu gelap */
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Efek Animasi Saat Kursor Menempel (Hover) */
+ul li a:hover {
+    background-color: #ffcc00; /* Warna kuning lebah/madu cerah */
+    color: #111111;
+    box-shadow: 0 2px 8px rgba(255, 204, 0, 0.4);
+}
+
+/* Mempercantik Tampilan Link Canva/Teks Biasa */
+a {
+    color: #d48806;
+    text-decoration: none;
     font-weight: bold;
-    color: blue;
+    transition: color 0.2s;
 }
 
-UL {list-style-type:none;
-border: 2px solid black;
-padding: 7px;
-background-color:blanchedalmond;
-text-align: center;
-font-size: 30px;
+a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
 }
 
-li {display:inline;
-padding: 10px;
-}
-
-p {
-    color:darkblue;
-    font-size: 30px;
-}
-
-.p2 {
-    font-weight: bold;
-    color:crimson;
-}
-
-pre {
-    font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: left;
-    font-style: italic;
+/* Container Tambahan untuk Merapikan Konten */
+.content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: 20px;
 }
