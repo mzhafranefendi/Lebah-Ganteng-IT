@@ -4,10 +4,12 @@ body {
     margin: 0;
     padding: 20px;
     color: #333333;
-    /* Menggunakan background pattern sarang lebah (beehive) warna terang yang soft */
-    background-color: #faf8f2;
-    background-image: url("https://www.transparenttextures.com/patterns/honeycomb.png");
-    background-attachment: fixed;
+    /* Mengubah background menggunakan file lokal "bg.jpeg" */
+    background-image: url("bg.jpeg");
+    background-size: cover; /* Memastikan gambar memenuhi layar secara proporsional */
+    background-position: center; /* Memposisikan gambar tepat di tengah */
+    background-repeat: no-repeat; /* Mencegah gambar berulang/lumping */
+    background-attachment: fixed; /* Membuat background tetap diam saat di-scroll */
 }
 
 /* Mengubah List Menjadi Navigasi Keren (Navbar) */
