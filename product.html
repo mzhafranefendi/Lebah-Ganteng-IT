@@ -9,23 +9,23 @@
             .product-container {
                 display: flex;
                 justify-content: center;
-                align-items: stretch; /* Membuat tinggi kartu otomatis sama rata */
-                gap: 40px; /* Jarak antar kartu diperlebar sedikit agar lega */
+                align-items: center; /* Mengubah ke center agar sejajar tengah secara vertikal */
+                gap: 50px; /* Jarak antar produk dibuat sedikit lebih lega */
                 flex-wrap: wrap; /* Supaya responsif jika dibuka di layar HP */
                 margin: 40px auto;
-                max-width: 1300px; /* Diperlebar agar ruang muat untuk konten yang lebih besar */
+                max-width: 1300px; 
             }
 
+            /* Dibuat transparan dan tanpa garis tepi (Borderless) */
             .product-card {
-                background: #f9f9f9;
-                border: 1px solid #ddd;
-                border-radius: 12px;
-                padding: 25px; /* Padding diperbesar agar tampilan lebih premium */
+                background: transparent; /* Menghilangkan latar belakang putih */
+                border: none; /* Menghilangkan garis tepi */
+                padding: 0; /* Menghilangkan padding agar space fokus pada aplikasi */
                 text-align: center;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-                flex: 1; /* Membuat kedua kartu membagi ruang sama rata */
-                min-width: 500px; /* Batas minimum lebar kartu saat berjejer */
-                max-width: 560px; /* Batas maksimal lebar kartu agar tidak terlalu mulur */
+                box-shadow: none; /* Menghilangkan bayangan luar kotak */
+                flex: 1; 
+                min-width: 500px; 
+                max-width: 560px; 
                 box-sizing: border-box;
             }
 
@@ -34,7 +34,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 480px; /* Tinggi seragam untuk area kerja produk */
+                height: 480px; 
                 overflow: hidden;
             }
         </style>
@@ -56,9 +56,6 @@
         <div class="product-container">
             
             <div class="product-card">
-                <h3 style="font-family: sans-serif; color: #ff9100; margin-top: 0; font-size: 1.4rem;">Honeycomb Calculator Premium</h3>
-                <p style="font-family: sans-serif; color: #666; font-size: 0.95rem; margin-bottom: 20px;">Kalkulator fisik interaktif dengan tombol heksagon 3D dan layar LCD neon yang estetik.</p>
-                
                 <div class="iframe-wrapper">
                     <iframe srcdoc='
                         <div class="main-wrapper">
@@ -128,9 +125,6 @@
             </div>
 
             <div class="product-card">
-                <h3 style="font-family: sans-serif; color: #4c97ff; margin-top: 0; font-size: 1.4rem;">Scratch Game Project</h3>
-                <p style="font-family: sans-serif; color: #666; font-size: 0.95rem; margin-bottom: 20px;">Mainkan game interaktif buatan saya langsung melalui panel di bawah ini.</p>
-                
                 <div class="iframe-wrapper">
                     <iframe src="https://scratch.mit.edu/projects/1328535223/embed" allowtransparency="true" width="550" height="455" frameborder="0" scrolling="no" allowfullscreen style="border-radius: 8px;"></iframe>
                 </div>
