@@ -13,20 +13,31 @@
                 gap: 50px; /* Jarak antar produk dibuat sedikit lebih lega */
                 flex-wrap: wrap; /* Supaya responsif jika dibuka di layar HP */
                 margin: 40px auto;
-                max-width: 1300px; 
+                max-width: 1400px; /* Diperlebar sedikit untuk menampung Scratch yang lebih besar */
             }
 
-            /* Dibuat transparan dan tanpa garis tepi (Borderless) */
+            /* Base class untuk produk card tanpa border */
             .product-card {
-                background: transparent; /* Menghilangkan latar belakang putih */
-                border: none; /* Menghilangkan garis tepi */
-                padding: 0; /* Menghilangkan padding agar space fokus pada aplikasi */
+                background: transparent; 
+                border: none; 
+                padding: 0; 
                 text-align: center;
-                box-shadow: none; /* Menghilangkan bayangan luar kotak */
-                flex: 1; 
-                min-width: 500px; 
-                max-width: 560px; 
+                box-shadow: none; 
                 box-sizing: border-box;
+            }
+
+            /* KARTU KALKULATOR: Ukuran normal/standar */
+            .card-calculator {
+                flex: 1; 
+                min-width: 380px; 
+                max-width: 440px; 
+            }
+
+            /* KARTU SCRATCH: Dibuat lebih besar secara proporsi flex */
+            .card-scratch {
+                flex: 1.5; /* Memberikan porsi ruang lebih besar dibanding kalkulator */
+                min-width: 600px; 
+                max-width: 720px; 
             }
 
             /* Container khusus di dalam kartu agar konten iframe terpusat */
@@ -34,7 +45,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 480px; 
+                height: 550px; /* Dinaikkan sedikit untuk mengakomodasi layar Scratch yang tinggi */
                 overflow: hidden;
             }
         </style>
@@ -55,7 +66,7 @@
 
         <div class="product-container">
             
-            <div class="product-card">
+            <div class="product-card card-calculator">
                 <div class="iframe-wrapper">
                     <iframe srcdoc='
                         <div class="main-wrapper">
@@ -124,9 +135,9 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card card-scratch">
                 <div class="iframe-wrapper">
-                    <iframe src="https://scratch.mit.edu/projects/1328535223/embed" allowtransparency="true" width="550" height="455" frameborder="0" scrolling="no" allowfullscreen style="border-radius: 8px;"></iframe>
+                    <iframe src="https://scratch.mit.edu/projects/1328535223/embed" allowtransparency="true" width="640" height="525" frameborder="0" scrolling="no" allowfullscreen style="border-radius: 12px;"></iframe>
                 </div>
             </div>
 
