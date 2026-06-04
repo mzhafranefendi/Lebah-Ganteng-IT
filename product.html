@@ -8,7 +8,7 @@
             /* Mengatur kontainer agar membungkus kedua produk secara sejajar (Flexbox) */
             .product-container {
                 display: flex;
-                幕ustify-content: center;
+                justify-content: center;
                 align-items: center; /* Mengubah ke center agar sejajar tengah secara vertikal */
                 gap: 50px; /* Jarak antar produk dibuat sedikit lebih lega */
                 flex-wrap: wrap; /* Supaya responsif jika dibuka di layar HP */
@@ -45,7 +45,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 550px; /* Dinaikkan sedikit untuk mengakomodasi layar Scratch yang tinggi */
+                height: 550px; /* Tinggi disamakan agar sejajar secara vertikal dengan kalkulator */
                 overflow: hidden;
             }
         </style>
@@ -133,7 +133,6 @@
                         </style>
 
                         <script>
-                            // Fungsi ditaruh di dalam agar bisa mendeteksi elemen #display dengan benar
                             function appendNumber(num) { 
                                 let display = document.getElementById("display");
                                 if (display.value === "0" || display.value === "Error") { display.value = num; } else { display.value += num; } 
@@ -161,7 +160,7 @@
 
             <div class="product-card card-scratch">
                 <div class="iframe-wrapper">
-                   <iframe src="https://scratch.mit.edu/projects/1328691245/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    <iframe src="https://scratch.mit.edu/projects/1328691245/embed" allowtransparency="true" width="645" height="530" frameborder="0" scrolling="no" allowfullscreen style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);"></iframe>
                 </div>
             </div>
 
