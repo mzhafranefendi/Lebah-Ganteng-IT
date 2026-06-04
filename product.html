@@ -18,7 +18,84 @@
             <h2>Produk Kami</h2>
             <p>Selamat datang di halaman produk. Di sini kami menyajikan hasil akhir atau produk digital yang telah kami buat.</p>
             </div>
+<div class="product-card" style="margin: 20px auto; max-width: 360px; text-align: center;">
+    <h3 style="font-family: sans-serif; color: #ff9100;">Honeycomb Calculator Premium</h3>
+    <p style="font-family: sans-serif; color: #666;">Kalkulator fisik interaktif dengan tombol heksagon 3D dan layar LCD neon yang estetik.</p>
+    
+    <iframe srcdoc='
+        <div class="main-wrapper">
+            <div class="hex-calculator">
+                <div class="lcd-screen">
+                    <div class="screen-glow"></div>
+                    <div class="brand">HONEYCOMB SCIENTIFIC</div>
+                    <input type="text" id="display" readonly placeholder="0">
+                </div>
+                
+                <div class="honeycomb-grid">
+                    <div class="hb-row">
+                        <button class="hb-btn func" onclick="clearDisplay()">C</button>
+                        <button class="hb-btn func" onclick="appendOperator(&#39;^&#39;)">^</button>
+                        <button class="hb-btn func" onclick="appendOperator(&#39;%&#39;)">%</button>
+                        <button class="hb-btn op" onclick="appendOperator(&#39;/&#39;)">÷</button>
+                    </div>
+                    <div class="hb-row shift">
+                        <button class="hb-btn" onclick="appendNumber(&#39;7&#39;)">7</button>
+                        <button class="hb-btn" onclick="appendNumber(&#39;8&#39;)">8</button>
+                        <button class="hb-btn" onclick="appendNumber(&#39;9&#39;)">9</button>
+                        <button class="hb-btn op" onclick="appendOperator(&#39;*&#39;)">×</button>
+                    </div>
+                    <div class="hb-row">
+                        <button class="hb-btn" onclick="appendNumber(&#39;4&#39;)">4</button>
+                        <button class="hb-btn" onclick="appendNumber(&#39;5&#39;)">5</button>
+                        <button class="hb-btn" onclick="appendNumber(&#39;6&#39;)">6</button>
+                        <button class="hb-btn op" onclick="appendOperator(&#39;-&#39;)">-</button>
+                    </div>
+                    <div class="hb-row shift">
+                        <button class="hb-btn" onclick="appendNumber(&#39;1&#39;)">1</button>
+                        <button class="hb-btn" onclick="appendNumber(&#39;2&#39;)">2</button>
+                        <button class="hb-btn" onclick="appendNumber(&#39;3&#39;)">3</button>
+                        <button class="hb-btn op" onclick="appendOperator(&#39;+&#39;)">+</button>
+                    </div>
+                    <div class="hb-row">
+                        <button class="hb-btn" onclick="appendNumber(&#39;0&#39;)">0</button>
+                        <button class="hb-btn" onclick="appendNumber(&#39;.&#39;)">.</button>
+                        <button class="hb-btn sqrt" onclick="calculateSqrt()">√</button>
+                        <button class="hb-btn equal" onclick="calculate()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <style>
+            body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; background: transparent; }
+            .main-wrapper { display: flex; justify-content: center; align-items: center; padding: 20px; background-color: #121212; border-radius: 20px; box-shadow: inset 0 0 30px rgba(0,0,0,0.9); }
+            .hex-calculator { background: linear-gradient(135deg, #2c2214 0%, #1a130a 100%); padding: 25px 20px; border-radius: 24px; border: 2px solid #ff9100; box-shadow: 0 15px 35px rgba(255, 145, 0, 0.25); width: 280px; }
+            .lcd-screen { position: relative; background: #180f02; border: 2px solid #ff9100; border-radius: 12px; margin-bottom: 25px; padding: 10px 12px; box-shadow: inset 0 0 15px rgba(255, 145, 0, 0.4); overflow: hidden; }
+            .screen-glow { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, rgba(255,145,0,0.1) 0%, transparent 80%); pointer-events: none; }
+            .brand { font-family: sans-serif; font-size: 0.6rem; color: #ff9100; letter-spacing: 2px; font-weight: bold; opacity: 0.7; margin-bottom: 5px; }
+            #display { width: 100%; height: 40px; background: transparent; border: none; text-align: right; font-size: 1.8rem; font-weight: bold; color: #ffaa00; text-shadow: 0 0 10px rgba(255, 170, 0, 0.6); font-family: monospace; outline: none; }
+            .honeycomb-grid { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+            .hb-row { display: flex; gap: 22px; }
+            .hb-btn { position: relative; width: 44px; height: 25.4px; background-color: #ffb300; color: #211502; font-size: 1.1rem; font-weight: 800; border: none; margin: 12.7px 0; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 0.1s ease; filter: drop-shadow(0px 4px 3px rgba(0,0,0,0.4)); }
+            .hb-btn::before { content: ""; position: absolute; top: -12.7px; left: 0; width: 0; height: 0; border-left: 22px solid transparent; border-right: 22px solid transparent; border-bottom: 12.7px solid #ffb300; }
+            .hb-btn::after { content: ""; position: absolute; bottom: -12.7px; left: 0; width: 0; height: 0; border-left: 22px solid transparent; border-right: 22px solid transparent; border-top: 12.7px solid #ffb300; }
+            .hb-btn:active { transform: translateY(2px); filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.4)); }
+            .hb-btn.op { background-color: #e65100; color: white; } .hb-btn.op::before { border-bottom-color: #e65100; } .hb-btn.op::after { border-top-color: #e65100; }
+            .hb-btn.func { background-color: #bf360c; color: white; } .hb-btn.func::before { border-bottom-color: #bf360c; } .hb-btn.func::after { border-top-color: #bf360c; }
+            .hb-btn.sqrt { background-color: #ffe082; color: #795548; } .hb-btn.sqrt::before { border-bottom-color: #ffe082; } .hb-btn.sqrt::after { border-top-color: #ffe082; }
+            .hb-btn.equal { background-color: #ff6d00; color: white; } .hb-btn.equal::before { border-bottom-color: #ff6d00; } .hb-btn.equal::after { border-top-color: #ff6d00; }
+        </style>
+
+        <script>
+            let display = document.getElementById("display");
+            function appendNumber(num) { if (display.value === "0" || display.value === "Error") { display.value = num; } else { display.value += num; } }
+            function appendOperator(op) { let lastChar = display.value.slice(-1); if(["+", "-", "*", "/", "%", "^"].includes(lastChar)) { display.value = display.value.slice(0, -1) + op; } else { display.value += op; } }
+            function clearDisplay() { display.value = ""; }
+            function calculateSqrt() { try { let value = eval(display.value.replace(/×/g, "*").replace(/÷/g, "/")); if (value >= 0) { display.value = Math.sqrt(value); } else { display.value = "Error"; } } catch (err) { display.value = "Error"; } }
+            function calculate() { try { let expression = display.value; expression = expression.replace(/×/g, "*").replace(/÷/g, "/"); if (expression.includes("^")) { let parts = expression.split("^"); if(parts.length === 2) { display.value = Math.pow(eval(parts[0]), eval(parts[1])); return; } } display.value = eval(expression); } catch (err) { display.value = "Error"; } }
+        </script>
+    ' style="width: 100%; height: 430px; border: none; background: transparent; overflow: hidden;"></iframe>
+</div>
         <script src="scripts.js"></script>
         <marquee>~End Of page~</marquee>
     </body>
