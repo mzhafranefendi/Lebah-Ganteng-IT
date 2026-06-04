@@ -8,7 +8,7 @@
             /* Mengatur kontainer agar membungkus kedua produk secara sejajar (Flexbox) */
             .product-container {
                 display: flex;
-                justify-content: center;
+                幕ustify-content: center;
                 align-items: center; /* Mengubah ke center agar sejajar tengah secara vertikal */
                 gap: 50px; /* Jarak antar produk dibuat sedikit lebih lega */
                 flex-wrap: wrap; /* Supaya responsif jika dibuka di layar HP */
@@ -131,6 +131,30 @@
                             .hb-btn.sqrt { background-color: #ffe082; color: #795548; } .hb-btn.sqrt::before { border-bottom-color: #ffe082; } .hb-btn.sqrt::after { border-top-color: #ffe082; }
                             .hb-btn.equal { background-color: #ff6d00; color: white; } .hb-btn.equal::before { border-bottom-color: #ff6d00; } .hb-btn.equal::after { border-top-color: #ff6d00; }
                         </style>
+
+                        <script>
+                            // Fungsi ditaruh di dalam agar bisa mendeteksi elemen #display dengan benar
+                            function appendNumber(num) { 
+                                let display = document.getElementById("display");
+                                if (display.value === "0" || display.value === "Error") { display.value = num; } else { display.value += num; } 
+                            }
+                            function appendOperator(op) { 
+                                let display = document.getElementById("display");
+                                let lastChar = display.value.slice(-1); 
+                                if(["+", "-", "*", "/", "%", "^"].includes(lastChar)) { display.value = display.value.slice(0, -1) + op; } else { display.value += op; } 
+                            }
+                            function clearDisplay() { 
+                                document.getElementById("display").value = ""; 
+                            }
+                            function calculateSqrt() { 
+                                let display = document.getElementById("display");
+                                try { let value = eval(display.value.replace(/×/g, "*").replace(/÷/g, "/")); if (value >= 0) { display.value = Math.sqrt(value); } else { display.value = "Error"; } } catch (err) { display.value = "Error"; } 
+                            }
+                            function calculate() { 
+                                let display = document.getElementById("display");
+                                try { let expression = display.value; expression = expression.replace(/×/g, "*").replace(/÷/g, "/"); if (expression.includes("^")) { let parts = expression.split("^"); if(parts.length === 2) { display.value = Math.pow(eval(parts[0]), eval(parts[1])); return; } } display.value = eval(expression); } catch (err) { display.value = "Error"; } 
+                            }
+                        </script>
                     ' style="width: 100%; height: 100%; border: none; background: transparent; overflow: hidden;"></iframe>
                 </div>
             </div>
@@ -142,15 +166,6 @@
             </div>
 
         </div> 
-
-        <script>
-            let display = document.getElementById("display");
-            function appendNumber(num) { if (display.value === "0" || display.value === "Error") { display.value = num; } else { display.value += num; } }
-            function appendOperator(op) { let lastChar = display.value.slice(-1); if(["+", "-", "*", "/", "%", "^"].includes(lastChar)) { display.value = display.value.slice(0, -1) + op; } else { display.value += op; } }
-            function clearDisplay() { display.value = ""; }
-            function calculateSqrt() { try { let value = eval(display.value.replace(/×/g, "*").replace(/÷/g, "/")); if (value >= 0) { display.value = Math.sqrt(value); } else { display.value = "Error"; } } catch (err) { display.value = "Error"; } }
-            function calculate() { try { let expression = display.value; expression = expression.replace(/×/g, "*").replace(/÷/g, "/"); if (expression.includes("^")) { let parts = expression.split("^"); if(parts.length === 2) { display.value = Math.pow(eval(parts[0]), eval(parts[1])); return; } } display.value = eval(expression); } catch (err) { display.value = "Error"; } }
-        </script>
         
         <script src="scripts.js"></script>
         <marquee>~End Of page~</marquee>
