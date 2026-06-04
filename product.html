@@ -93,6 +93,8 @@
             function clearDisplay() { display.value = ""; }
             function calculateSqrt() { try { let value = eval(display.value.replace(/×/g, "*").replace(/÷/g, "/")); if (value >= 0) { display.value = Math.sqrt(value); } else { display.value = "Error"; } } catch (err) { display.value = "Error"; } }
             function calculate() { try { let expression = display.value; expression = expression.replace(/×/g, "*").replace(/÷/g, "/"); if (expression.includes("^")) { let parts = expression.split("^"); if(parts.length === 2) { display.value = Math.pow(eval(parts[0]), eval(parts[1])); return; } } display.value = eval(expression); } catch (err) { display.value = "Error"; } }
+      
+       <iframe src="https://scratch.mit.edu/projects/1328535223/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
         </script>
     ' style="width: 100%; height: 430px; border: none; background: transparent; overflow: hidden;"></iframe>
 </div>
