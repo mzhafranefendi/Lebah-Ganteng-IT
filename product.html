@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Product - LEBAH GANTENG-IT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Pembagian layout 2 kolom */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        @media(max-width: 800px) {
+            .product-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Styling Kalkulator ala iPhone */
+        .iphone-calc {
+            background: #000;
+            width: 280px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 40px;
+            border: 4px solid #333;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+        }
+        .calc-screen {
+            width: 100%;
+            height: 70px;
+            background: transparent;
+            color: white;
+            text-align: right;
+            border: none;
+            font-size: 40px;
+            padding-right: 10px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+        .calc-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .calc-btn {
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            height: 55px;
+            width: 55px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.1s;
+        }
+        .calc-btn:active { opacity: 0.6; }
+        .calc-btn.orange { background: #FF9F0A; }
+        .calc-btn.gray { background: #A5A5A5; color: black; }
+        .calc-btn.zero {
+            grid-column: span 2;
+            width: 120px;
+            border-radius: 30px;
+        }
+
+        /* Tombol Google Colab */
+        .colab-button {
+            display: block;
+            text-align: center;
+            background: #F4511E;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 10px;
+            margin: 20px auto 0 auto;
+            width: 80%;
+            border: 2px solid #212121;
+            box-shadow: 3px 3px 0px #212121;
+        }
+        .colab-button:hover { background: #E64A19; }
+
+        /* Container Pembungkus Scratch */
+        .scratch-container {
+            background: #FFF;
+            border: 3px solid #212121;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 5px 5px 0px #212121;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="design.html">Design</a>
+        <a href="product.html" class="active">Product</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <div class="container">
+        <h1>🛠️ Ruang Karya LEBAH-GANTENG-IT</h1>
+        <p style="text-align: center;">Uji coba program hitung-hitungan berbasis Web, Python, dan Scratch Game di bawah ini.</p>
+
+        <div class="product-grid">
+            
+            <div style="background: rgba(255,255,255,0.6); padding: 20px; border-radius: 15px; border: 2px solid #212121;">
+                <h3 style="margin-top: 0;">🧮 Versi 1: Kalkulator Web</h3>
+                
+                <div class="iphone-calc">
+                    <input type="text" id="screen" class="calc-screen" value="0" disabled>
+                    <div class="calc-buttons">
+                        <button class="calc-btn gray" onclick="clearScreen()">C</button>
+                        <button class="calc-btn gray" onclick="appendValue('/')">/</button>
+                        <button class="calc-btn gray" onclick="appendValue('*')">*</button>
+                        <button class="calc-btn orange" onclick="appendValue('-')">-</button>
+                        
+                        <button class="calc-btn" onclick="appendValue('7')">7</button>
+                        <button class="calc-btn" onclick="appendValue('8')">8</button>
+                        <button class="calc-btn" onclick="appendValue('9')">9</button>
+                        <button class="calc-btn orange" onclick="appendValue('+')">+</button>
+                        
+                        <button class="calc-btn" onclick="appendValue('4')">4</button>
+                        <button class="calc-btn" onclick="appendValue('5')">5</button>
+                        <button class="calc-btn" onclick="appendValue('6')">6</button>
+                        <button class="calc-btn orange" onclick="calculateResult()">=</button>
+                        
+                        <button class="calc-btn" onclick="appendValue('1')">1</button>
+                        <button class="calc-btn" onclick="appendValue('2')">2</button>
+                        <button class="calc-btn" onclick="appendValue('3')">3</button>
+                        <button class="calc-btn zero" onclick="appendValue('0')">0</button>
+                    </div>
+                </div>
+
+                <hr style="border: 1px solid #CCC; margin: 25px 0;">
+                
+                <h3>🐍 Versi 2: Algoritma Python</h3>
+                <p style="font-size: 13px; text-align: center;">Jalankan kode kompilasi kalkulator lewat server Google Colab berikut:</p>
+                <a href="https://colab.research.google.com/drive/1-yb4jCowD2xMhNkWbPPXz9D3ACMU3LI4?usp=sharing" target="_blank" class="colab-button">
+                    BUKA PROGRAM PYTHON COLAB 🚀
+                </a>
+            </div>
+
+            <div class="scratch-container">
+                <h3 style="margin-top: 0;">🎮 Game Scratch Interaktif</h3>
+                <p style="font-size: 14px;">Bantu sang Lebah melewati rintangan 4 level matematika!</p>
+                
+                <iframe src="https://scratch.mit.edu/projects/1328691245/embed" 
+                        allowtransparency="true" 
+                        width="100%" 
+                        height="400" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let screen = document.getElementById('screen');
+        let currentInput = '0';
+
+        function appendValue(val) {
+            if (currentInput === '0' && !isNaN(val)) {
+                currentInput = val;
+            } else {
+                currentInput += val;
+            }
+            screen.value = currentInput;
+        }
+
+        function clearScreen() {
+            currentInput = '0';
+            screen.value = currentInput;
+        }
+
+        function calculateResult() {
+            try {
+                // Mengevaluasi string perhitungan matematika sederhana secara aman
+                let result = eval(currentInput);
+                currentInput = String(result);
+                screen.value = currentInput;
+            } catch (error) {
+                screen.value = "Error";
+                currentInput = '0';
+            }
+        }
+    </script>
+</body>
+</html>
